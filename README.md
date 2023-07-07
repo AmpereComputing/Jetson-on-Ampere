@@ -45,6 +45,7 @@ Then uncomment the lines in the install.sh file that correspond to Jetson, then 
 chmod +x install.sh
 sh install.sh
 ```
+The ```install.sh``` script will install all other components and libraries, like Gstreamer. It will also download the necessary OpenCV source codes from GitHub repositories.
 
 
 ## Set up OpenCV environment on Ampere systems
@@ -110,17 +111,9 @@ When executing the ```install.sh``` script, it may ask for your region and city.
 
 
 
-## Download and compile OpenCV on Ampere systems/Jetson
+## Compile OpenCV on Ampere systems/Jetson
 After setting up the environment, download OpenCV from GitHub and begin compilation.
-
 ```
-wget https://github.com/opencv/opencv/archive/4.6.0.zip
-unzip 4.6.0.zip
-rm 4.6.0.zip
-wget https://github.com/opencv/opencv_contrib/archive/4.6.0.zip
-unzip 4.6.0.zip
-rm 4.6.0.zip
-mkdir ~/opencv-4.6.0/build
 cd ~/opencv-4.6.0/build
 
 cmake -D WITH_CUDA=ON -D WITH_CUDNN=ON -D CUDA_ARCH_BIN="8.7" -D CUDA_ARCH_PTX="" -D OPENCV_GENERATE_PKGCONFIG=ON -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.6.0/modules -D WITH_GSTREAMER=ON -D WITH_LIBV4L=ON -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=ON ..
@@ -141,7 +134,7 @@ Note: for the variable "CUDA_ARCH_BIN", we set it to 8.7 so that the compiled Op
 For complete list of GPU compute capability, please see: https://developer.nvidia.com/cuda-gpus
 
 
-## To test compilation and run sample application:
+## Verify compilation and run sample application:
 ```
 cd ~/opencv-4.6.0/build/bin
 ./opencv_version
