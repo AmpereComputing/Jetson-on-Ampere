@@ -52,7 +52,6 @@ sudo apt install nvidia-jetpack
 ```
 xhost +
 # This enables the container to use screens attached to Jetson, if any.
-
 sudo docker run -it --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix nvcr.io/nvidia/l4t-cuda:11.4.19-devel
 ```
 
@@ -130,7 +129,6 @@ During execution of the ```install.sh``` script, the terminal might ask for your
 After running ```install.sh```, change directory to the OpenCV 4.6.0 source code folder and start CMake.
 ```
 cd ~/opencv-4.6.0/build
-
 cmake -D WITH_CUDA=ON -D WITH_CUDNN=ON -D CUDA_ARCH_BIN="8.7" -D CUDA_ARCH_PTX="" -D OPENCV_GENERATE_PKGCONFIG=ON -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.6.0/modules -D WITH_GSTREAMER=ON -D WITH_LIBV4L=ON -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D BUILD_EXAMPLES=ON ..
 ```
 
