@@ -22,7 +22,7 @@ For additional components and libraries needed to compile OpenCV will be install
 
 
 ### System setup
-ADLink Ampere Altra Developer Platform, with 64 Core Ampere Altra processor. 
+**ADLink Ampere Altra Developer Platform, with 64 Core Ampere Altra processor.**
 
 •	Ubuntu 20.04.2 LTS (GNU/Linux 5.15.0-76-generic aarch64).
 
@@ -30,7 +30,7 @@ ADLink Ampere Altra Developer Platform, with 64 Core Ampere Altra processor.
 
 •	GPU driver: 535.54.03
 
-Jetson Orin AGX 64 GB developer kit
+**Jetson Orin AGX 64 GB developer kit**
 
 •	OS and Kernel: Ubuntu 20.04.6 LTS (GNU/Linux 5.10.104-tegra aarch64)
 
