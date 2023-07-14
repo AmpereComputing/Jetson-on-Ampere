@@ -20,15 +20,22 @@ For Ampere ADLink Development Kit, most key requirements need to be installed st
 
 For additional components and libraries needed to compile OpenCV will be installed via the ```install.sh``` script.
 
-**System setup**
+
+### System setup
 ADLink Ampere Altra Developer Platform, with 64 Core Ampere Altra processor. 
+
 •	Ubuntu 20.04.2 LTS (GNU/Linux 5.15.0-76-generic aarch64).
+
 •	GPU config: NVIDIA GeForce RTX 3060
+
 •	GPU driver: 535.54.03
 
 Jetson Orin AGX 64 GB developer kit
+
 •	OS and Kernel: Ubuntu 20.04.6 LTS (GNU/Linux 5.10.104-tegra aarch64)
+
 •	GPU config: NVIDIA Ampere architecture with 2048 NVIDIA® CUDA® cores and 64 Tensor cores
+
 •	GPU driver: default (Jetson Linux 35.3.1) 
 
 
@@ -66,7 +73,7 @@ If you want to compile OpenCV with GPU enabled, you need to have an Nvidia deskt
 
 ### Install Docker and NVIDIA Container Toolkit
 These two packages are necessary to run the official Nvidia NGC docker image with CUDA/cuDNN.
-For Jetson, these were automatically installed when installing Jetpack components, but here you need to manually install these two components because Ampere Developer Platform is used.
+For Jetson, these were installed when you install the Jetpack components. For Ampere Developer Platform, follow the steps below to install these two packages.
 
 #### Install Docker
 ```
