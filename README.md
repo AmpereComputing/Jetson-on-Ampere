@@ -57,7 +57,7 @@ sudo docker run -it --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11
 
 ### Install other dependencies
 Connect to the docker container, install git, then fetch this GitHub repository. You should be able to download the file ```install.sh```. Alternatively you can download files to Jetson host, then use ```docker cp``` to copy the ```install.sh``` file into the Jetson container.
-Then uncomment the lines in the ```install.sh``` script that correspond to Jetson, and execute the following commands inside the container:
+Uncomment every line in ```install.sh``` that starts with “#” except the first line, then execute the following commands inside the container:
 ```
 chmod +x install.sh
 sh install.sh
