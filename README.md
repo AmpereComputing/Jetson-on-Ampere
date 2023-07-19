@@ -1,11 +1,13 @@
 ![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
 # Jetson Development with Ampere
+
 ## Purpose of this project:
 1. Demonstrate that Ampere systems provide fast compilation, and can natively compile Jetson applications. We use OpenCV as an example to demonstrate this.
 
-2. Ampere Altra Developer Platform[^1] is advantageous to developing application for ARM-based devices. You can develop application on Ampere Developer Platform and directly deploy to devices like Jetson.
+2. [Ampere Altra Developer Platform](https://www.ipi.wiki/products/ampere-altra-developer-platform) is advantageous to developing application for ARM-based devices. You can develop application on Ampere Developer Platform and directly deploy to devices like Jetson.
 
+Note: This is part of Ampere's [Arm Native Solutions](https://amperecomputing.com/solutions/arm-native) including cloud gaming, cloud phone, [Windows 11 on Ampere](https://github.com/AmpereComputing/Windows-11-On-Ampere), and [edge solutions](https://amperecomputing.com/home/edge). 
 
 ## Benefit of using Ampere:
 The benefit of using Ampere as the developer platform is the extra CPU cores and its great energy efficiency. With 64 ARM cores in total (as compared to Jetson's 12 cores), compilation time can be speed up by more than 1.6X. Please refer to this tuning guide that details the performance benefits, link:
@@ -167,5 +169,3 @@ With monitor attached, you can see the result of this sample application run. It
 After compiling OpenCV on Ampere system, sample application binaries can be copied and run on Jetson system without any issue. 
 Copy the sample application binary from your Ampere container to the same location in your Jetson container, for example ```opencv-4.6.0/build/bin/example_cpp_facial_features```. Finally, run the copied sample application in Jetson environment. Identical result will be observed, which proves that the application can be deployed to Jetson directly. 
 
-## References
-[^1]: https://www.ipi.wiki/products/ampere-altra-developer-platform
