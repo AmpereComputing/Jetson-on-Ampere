@@ -158,9 +158,9 @@ This will output the version of compiled OpenCV, which should be 4.6.0.
 
 You can run a more advanced sample application, for example:
 ```
-./example_cpp_facial_features ../../samples/data/lena.jpg ../../data/haarcascades/haarcascade_frontalface_alt.xml -mouth=../../data/haarcascades/haarcascade_smile.xml
+./example_cpp_facial_features ../../samples/data/messi5.jpg ../../data/haarcascades_cuda/haarcascade_frontalface_alt.xml
 ```
-With monitor attached, you can see the result of this sample application run. It can identify the face and mouth of the person in the input photo. Note that canberra-gtk-module error can be ignored.
+With monitor attached, you can see the result of this sample application run. It can identify the face of the person in the input photo. Note that canberra-gtk-module error can be ignored.
 
 
 ## Cross compilation from Ampere to Jetson:
