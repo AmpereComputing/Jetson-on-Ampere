@@ -1,10 +1,10 @@
 ![Ampere Computing](https://avatars2.githubusercontent.com/u/34519842?s=400&u=1d29afaac44f477cbb0226139ec83f73faefe154&v=4)
 
-# Jetson-on-Ampere
+# Jetson Development with Ampere
 ## Purpose of this project:
-1. Demonstrate that Ampere systems provide faster compilation, and can natively compile Jetson applications. We use OpenCV as an example to demonstrate this.
+1. Demonstrate that Ampere systems provide fast compilation, and can natively compile Jetson applications. We use OpenCV as an example to demonstrate this.
 
-2. Ampere Altra Developer Platform is advantageous to developing application for ARM-based devices. You can develop application on Ampere Developer Platform and directly deploy to devices like Jetson.
+2. Ampere Altra Developer Platform[^1] is advantageous to developing application for ARM-based devices. You can develop application on Ampere Developer Platform and directly deploy to devices like Jetson.
 
 
 ## Benefit of using Ampere:
@@ -16,13 +16,13 @@ This guide will explain the steps to install OpenCV 4.6.0 on both NVIDIA Jetson 
 
 To prepare for compiling OpenCV, proper environment should be set up on both Ampere and Jetson systems. Key requirements include OS(Ubuntu 20.04 for ARM), GPU driver, Docker, Nvidia container toolkit, CUDA/cuDNN.
 For Jetson, installing nvidia-jetpack will automatically include proper OS, GPU driver, Docker and Nvidia container toolkit. Using NVIDIA NGC CUDA for L4T container on Jetson will enable CUDA/cuDNN. 
-For Ampere ADLink Development Kit, most key requirements need to be installed step-by-step, and using NVIDIA NGC CUDA container will enable CUDA/cuDNN. All installation details are documented below. 
+For Ampere Altra Developer Platform, most key requirements need to be installed step-by-step, and using NVIDIA NGC CUDA container will enable CUDA/cuDNN. All installation details are documented below. 
 
 For additional components and libraries needed to compile OpenCV will be installed via the ```install.sh``` script.
 
 
 ### System setup
-**ADLink Ampere Altra Developer Platform, with 64 Core Ampere Altra processor.**
+**Ampere Altra Developer Platform, with 64 Core Ampere Altra processor.**
 
 •	Ubuntu 20.04.2 LTS (GNU/Linux 5.15.0-76-generic aarch64).
 
@@ -166,3 +166,6 @@ With monitor attached, you can see the result of this sample application run. It
 ## Cross compilation from Ampere to Jetson:
 After compiling OpenCV on Ampere system, sample application binaries can be copied and run on Jetson system without any issue. 
 Copy the sample application binary from your Ampere container to the same location in your Jetson container, for example ```opencv-4.6.0/build/bin/example_cpp_facial_features```. Finally, run the copied sample application in Jetson environment. Identical result will be observed, which proves that the application can be deployed to Jetson directly. 
+
+## References
+[^1]: https://www.ipi.wiki/products/ampere-altra-developer-platform
