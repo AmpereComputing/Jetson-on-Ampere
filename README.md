@@ -116,7 +116,7 @@ sudo docker run --net=host -e DISPLAY=$DISPLAY --gpus all -it nvcr.io/nvidia/cud
 
 Note that this container image is slightly different than the one for Jetson, but it still provides the same functionality which includes CUDA and cuDNN.
 Make sure that the docker version matches the os version, this is very important. Also check the free memory by "free", you should have more than 2gb of memory available.
-
+The latest version for cuda container is 12.2, but we ran 11.4 because trying to match the latest l4t-cuda container version of Jetson, for performance comparison.
 
 ### Install other dependencies
 In host terminal, use ```docker cp``` to copy the ```install.sh``` file in this repository to the Jetson container.
@@ -167,6 +167,22 @@ With monitor attached, you can see the result of this sample application run. It
 
 
 ## Cross compilation from Ampere to Jetson:
-After compiling OpenCV on Ampere system, sample application binaries can be copied and run on Jetson system without any issue. 
-Copy the sample application binary from your Ampere container to the same location in your Jetson container, for example ```opencv-4.6.0/build/bin/example_cpp_facial_features```. Finally, run the copied sample application in Jetson environment. Identical result will be observed, which proves that the application can be deployed to Jetson directly. 
+This additional section proves that OpenCV application compiled on Ampere system can be deployed directly to Jetson. 
 
+To do so, find the compiled sample applications under “opencv-4.6.0/build/bin” folder on the Ampere system. Then copy any sample application binary to the same “opencv-4.6.0/build/bin” folder on Jetson system. Finally, run the copied sample application in Jetson environment. Identical results will be observed, which proves that the application can be deployed to Jetson directly. 
+
+```
+cd ~/opencv-4.6.0/build/bin
+# Copy the binary from Ampere container to Jetson host:
+scp ./example_cpp_facial_features dest_user@dest_ip:/
+# Copy the binary from Jetson host to Jetson CUDA container:
+# You can use “docker ps” to check the container_id
+docker cp ./example_cpp_facial_features <container_id>:/
+# Connect to the container shell, then move the binary inside the container
+mv /example_cpp_facial_features ~/opencv-4.6.0/build/bin/
+./example_cpp_facial_features ../../samples/data/messi5.jpg ../../data/haarcascades/haarcascade_frontalface_alt.xml
+```
+Note: Please make sure that ```xhost +``` is executed before starting the container.
+
+# Benchmarking results
+Please refer to official Ampere document: 
