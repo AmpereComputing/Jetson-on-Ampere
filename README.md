@@ -111,10 +111,11 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 ### Start the official Nvidia container for CUDA and cuDNN packages.
 ```
 xhost +
-sudo docker run --net=host -e DISPLAY=$DISPLAY --gpus all -it nvcr.io/nvidia/cuda:11.4.3-cudnn8-devel-ubuntu20.04
+sudo docker run --net=host -e DISPLAY=$DISPLAY --gpus all -it nvcr.io/nvidia/cuda:11.4.19-cudnn8-devel-ubuntu20.04
 ```
 
 Note that this container image is slightly different than the one for Jetson, but it still provides the same functionality which includes CUDA and cuDNN.
+Make sure that the docker version matches the os version, this is very important. Also check the free memory by "free", you should have more than 2gb of memory available.
 
 
 ### Install other dependencies
