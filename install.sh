@@ -13,11 +13,14 @@ apt-get -y install libv4l-dev
 apt-get -y install libeigen3-dev
 apt-get -y install libglew-dev
 apt-get -y install libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-dev
+# Uncomment this line below if installing for Jetson
 # apt-get -y install libdc1394-22-dev
 apt-get -y install git wget unzip
 apt-get install -y python3.8-dev python3-numpy
+# Uncomment this line below if installing for Jetson
 # apt-get -y install python-dev python-numpy
 apt-get install -y libv4l-dev v4l-utils qv4l2
+# Uncomment this line below if installing for Jetson
 # apt-get -y install v4l2ucp
 
 wget https://github.com/opencv/opencv/archive/4.6.0.zip
