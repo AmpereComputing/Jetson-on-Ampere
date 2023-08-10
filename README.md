@@ -423,7 +423,7 @@ In the container shell, please execute this following command to install other l
 ```
 
 Then please follow the same steps in the section 
-TODO: "Install and Running Yolov8 (on bare metal Jetson/Workstation)" above, from section "Install/upgrade pip3" to "Pull deepstream-yolo for Yolov8 test run and set configs", to set up YoloV8 running environment. The steps are mostly the same, except for some differences noted below:
+"Install and Running Yolov8 (on bare metal Jetson/Workstation)" above, from section "Install/upgrade pip3" to "Pull deepstream-yolo for Yolov8 test run and set configs", to set up YoloV8 running environment. The steps are mostly the same, except for some differences noted below:
 
 **Different steps:**
 1.Remove "sudo" for any installation script, the docker container is already running with root permissions
@@ -457,7 +457,7 @@ sudo docker run -it --rm --net=host --runtime nvidia  -e DISPLAY=$DISPLAY -w /op
 ```
 
 ## Training a YoloV8 model on Workstation
-TODO: finish step "Install and runnin Yolov8 on Workstation container"
+First finish the above step in "Install and runnin Yolov8 on Workstation container"
 
 For the last step of installing YOLO's required packages:
 Alternatively, if you want to specify the versions to match the package versions on Jetson:
@@ -475,7 +475,6 @@ Then execute install.sh file inside the container.
 Then put these two files in the home folder(/root) inside the container: ```train.sh```, ```getstats.sh```.
 
 ### Then open another terminal connecting to the ADLink host, but not this container. Commit this docker image, name it as ```yolocontainer:v1```
-TODO:commit this container.
 
 Use the script ```yolo_loop.sh``` in Workstation host to start YOLO containers with 1, 2 ...64 cores, and get running statistics.
 ```sudo sh yolo_loop.sh```
@@ -487,7 +486,7 @@ After executing the script, the running statistics will be saved in the folder o
 
 
 ## Training a Yolov8 model on Jetson container
-#TODO: don't forget to boost the clocks on Jetson.
+Note: Don't forget to boost the clocks on Jetson.
 
 ### Start the NGC DeepStream container on Jetson(Reference[^20]):
 We use the DeepStream-l4t-Triton container as the base container to build our environment
@@ -497,7 +496,7 @@ sudo docker run -it --net=host --runtime nvidia -e DISPLAY=$DISPLAY --shm-size=1
 ```
 Note that for shm-size, input a memory large enough to let the YOLO model train (you will know an shm-size is not enough if yolo training crashes).
 
-### TODO: Then follow the steps previously to install torch and torchvision in the container.
+### Then follow the steps in previous sections to install torch and torchvision in the container. Only torch and torchvision is needed, no need to install deepstream.
 
 ### Finally, install YOLO
 pip install ultralytics
